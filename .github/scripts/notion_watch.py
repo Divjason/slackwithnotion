@@ -129,9 +129,10 @@ def main():
 
     # 첫 실행 시: 최근 30분만 훑고 시작(중복 폭주 방지)
     if not last_checked:
-        last_checked_dt = datetime.now(timezone.utc) - (60 * 30).__rshift__(0)  # dummy
-        last_checked_dt = datetime.now(timezone.utc)  # 실사용: 이제부터
-        last_checked_iso = last_checked_dt.isoformat()
+        # last_checked_dt = datetime.now(timezone.utc) - (60 * 30).__rshift__(0)  # dummy
+        # last_checked_dt = datetime.now(timezone.utc)  # 실사용: 이제부터
+        # last_checked_iso = last_checked_dt.isoformat()
+        last_checked_iso = datetime.now(timezone.utc).isoformat()
     else:
         last_checked_iso = last_checked
 
